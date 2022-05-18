@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Forum</title>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="right-header">
+            <h1>My Forum</h1>
+        </div>
+        
+    </div>
+    <div class="nav">
+        <a href="#">Home</a>
+    </div>
+
+
+    <div class="main">
+        <ol>
+        </ol>
+    </div>
+
+    <!-- <div class="img">
+        <img src="./pepethink.png" class="img1" >
+        <img src="./pepethink.png" class="img1" >
+        <img src="./pepethink.png" class="img1" >
+        <img src="./pepethink.png" class="img1" >
+        <img src="./pepethink.png" class="img1" >
+        <img src="./pepethink.png" class="img1" >
+    </div> -->
+
+    <a href="#" class="to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="data.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.querySelector('ol');
+        for (let thread of threads) {
+            var html = `
+            <li class="row">
+                <a href="/thread.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="timestamp">
+                            ${new Date(thread.date).toLocaleString()}
+                        </p>
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    </script>    
+
+        
+    
+
+        <div class="footer">
+            <h2>Contact us: 123456789</h2>
+        </div>
+</body>
+
+</html>
